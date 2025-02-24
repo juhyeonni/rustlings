@@ -34,7 +34,18 @@ mod tests {
         let order_template = create_order_template();
 
         // TODO: Create your own order using the update syntax and template above!
-        // let your_order =
+
+        /* using Clone macro */
+        // let mut your_order = order_template.clone();
+        // your_order.name = String::from("Hacker in Rust");
+        // your_order.count = 1;
+
+        /* using struct update syntax */
+        let your_order = Order {
+            name: String::from("Hacker in Rust"),
+            count: 1,
+            ..order_template
+        };
 
         assert_eq!(your_order.name, "Hacker in Rust");
         assert_eq!(your_order.year, order_template.year);
